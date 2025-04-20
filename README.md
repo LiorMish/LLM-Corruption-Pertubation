@@ -1,5 +1,11 @@
 # Large‑Language‑Model (LLM) Adversarial Perturbations
 
+Attack | Goal | Key Idea | Success Signal
+Targeted Confusion | Make a single answer devolve into nonsense | Append a GCG‑optimised suffix that steers the decoder off‑distribution | ↑ Perplexity, ↓ Fuzzy‑match
+Cascading Confusion | Keep the model confused in follow‑up turns | Poison only the first turns; observe lingering chaos | Confusion persists ≥ 3 turns
+RAG Contamination | Poison a retrieval‑augmented pipeline | Embed adversarial strings inside retrieved docs | +70 % avg. perplexity
+Rare‑Token Injection | Test robustness to unseen tokens | Feed sequences of least‑frequent tokens | ≤ 2 % hallucination rate
+
 ## 1 . Overview
 Modern LLMs are aligned to refuse disallowed content, but alignment can be subverted.
 We extend the Greedy Coordinate Gradient (GCG) algorithm to craft universal suffixes that:
