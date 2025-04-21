@@ -2,13 +2,7 @@
 
 ## 1 . Overview
 Modern LLMs are aligned to refuse disallowed content, but alignment can be subverted.
-We extend the Greedy Coordinate Gradient (GCG) algorithm to craft universal suffixes that:
-
-force any compliant model to output garbage,
-
-keep that confusion alive across multi‑turn chats,
-
-and even poison RAG systems by hiding in the retrieved context.
+We extend the Greedy Coordinate Gradient (GCG) algorithm to craft universal suffixes that force any compliant model to output garbage, keep that confusion alive across multi‑turn chats, and even poison RAG systems by hiding in the retrieved context.
 
 ## 2 . Methodology
 ### 2.1 Rare‑Token Injection
